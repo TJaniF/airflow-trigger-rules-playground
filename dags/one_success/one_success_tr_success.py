@@ -36,7 +36,7 @@ def one_success_tr_success():
         return "hi"
 
     @task(trigger_rule="one_success")
-    def oone_success_task():
+    def one_success_task():
         return "hi"
 
     upstream_task_5_obj = upstream_task_5()
@@ -44,7 +44,7 @@ def one_success_tr_success():
 
     chain(
         [upstream_task_1(), upstream_task_2(), upstream_task_3(), upstream_task_5_obj],
-        oone_success_task(),
+        one_success_task(),
     )
 
 
